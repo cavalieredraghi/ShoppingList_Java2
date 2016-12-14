@@ -40,12 +40,24 @@ public class ShoppingListController {
 	}
 
 	@GetMapping("/lists")
-	public String lists(Model model) {
+	public String lists(Model model, @RequestParam(name = "srch-term", required = false) String searchTerm) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String email = auth.getName();
 		User u = userRepo.findOneByEmail(email);
+		if (searchTerm == null || "".equals(searchTerm)) {
+			model.addAttribute("lists", shoppingListRepo.findAllByUser(u));
+		} else {
+			ArrayList<ShoppingList> userLists = new ArrayList<ShoppingList>();
+			ArrayList<ShoppingList> lists = shoppingListRepo.findByCategoryContainsOrNameContainsAllIgnoreCase(searchTerm,
+					searchTerm);
+			for (ShoppingList list : lists) {
+				if (list.getUser() == u) {
+					userLists.add(list);
+				}
+			}
 		model.addAttribute("lists", shoppingListRepo.findAllByUser(u));
 		model.addAttribute("user", u);
+		}
 		return "lists";
 	}
 

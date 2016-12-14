@@ -43,6 +43,15 @@ public class ShoppingList {
 	@OneToMany
 	private Set<ShoppingListItem> shoppingListItems;
 
+	private String category;
+	
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
 	public ShoppingList() {
 		setCreatedUtc(new Date(System.currentTimeMillis()));
 		updateModifiedUtc();

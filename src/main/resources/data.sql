@@ -1,6 +1,7 @@
 INSERT INTO java2.users (email, password, full_name, active, created_utc, modified_utc, role) VALUES ('test@test.com', 'test', 'Test Test', true, '2016-11-30 10:25:00', '2016-11-30 10:25:00', 'ADMIN');
 INSERT INTO java2.users (email, password, full_name, active, created_utc, modified_utc, role) VALUES ('test2@test.com', 'test', 'Test2 Test', true, '2016-11-30 10:25:00', '2016-11-30 10:25:00', 'ADMIN');
 
+
 INSERT INTO java2.shopping_lists (user_id, name, color, created_utc, modified_utc) VALUES (1, 'Shopping List for User 1', '#000000', '2016-11-30 10:25:00', '2016-11-30 10:25:00');
 INSERT INTO java2.shopping_lists (user_id, name, color, created_utc, modified_utc) VALUES (2, 'Shopping List for User 2', '#000000', '2016-11-30 10:25:00', '2016-11-30 10:25:00');
 

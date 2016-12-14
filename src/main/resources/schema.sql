@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS java2.shopping_lists (
 	user_id INT UNSIGNED NULL,
 	name VARCHAR(128) NOT NULL,
 	color VARCHAR(7) NOT NULL DEFAULT '#000000',
+	category VARCHAR(100) NULL,
 	created_utc TIMESTAMP NOT NULL,
 	modified_utc TIMESTAMP NOT NULL,
 	PRIMARY KEY (id));
