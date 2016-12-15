@@ -26,6 +26,15 @@
 						<input type="hidden" id="shoppingListItemNoteId" name="shoppingListItemNoteId" th:value="${listItem.shoppingListItemNote.id}" />
 						<textarea id="shoppingListItemNoteBody" name="shoppingListItemNoteBody" placeholder="Note" th:text="${listItem.shoppingListItemNote.body}" class="form-control"></textarea>
 					</div>
+					<div class="form-group">
+			<label for="exampleInputFile"> File Input</label> <input type="file"
+				name="file" />
+			<p class="help-block">Example block-level help text here.</p>
+		</div>
+		<div class="form-group">
+			<label for="exampleInputFile">Remove image</label> <input
+				type="checkbox" name="removeImage" value="true" />
+		</div>
 					<button class="btn btn-primary pull-right" type="submit">Submit</button>
 				</form>
 			</div>

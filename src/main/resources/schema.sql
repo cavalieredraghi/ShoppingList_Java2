@@ -46,3 +46,10 @@ CREATE TABLE IF NOT EXISTS java2.shopping_list_items (
 	created_utc TIMESTAMP NOT NULL,
 	modified_utc TIMESTAMP NOT NULL,
 	PRIMARY KEY (id));
+
+CREATE TABLE IF NOT EXISTS java2.item_images (
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	item_id INT UNSIGNED NOT NULL,
+	content_type VARCHAR(45) NOT NULL,
+	image BLOB NOT NULL,
+	PRIMARY KEY (id));

@@ -9,6 +9,9 @@
 	<body layout:fragment="content">
 		<div class="container">
 			<h1>View List Item</h1>
+			<img id="avatar" src="" th:if="${shoppingListItemImage}"
+		th:src="${shoppingListItemImage.htmlSrc}" alt="Profile Image"
+		title="Profile Image" />
 			<table class="table">
 				<tr>
 					<td><strong>Priority:</strong></td>
