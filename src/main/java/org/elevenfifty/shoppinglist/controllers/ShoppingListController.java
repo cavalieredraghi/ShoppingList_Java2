@@ -53,10 +53,12 @@ public class ShoppingListController {
 			for (ShoppingList list : lists) {
 				if (list.getUser() == u) {
 					userLists.add(list);
+					
 				}
 			}
 		model.addAttribute("lists", shoppingListRepo.findAllByUser(u));
 		model.addAttribute("user", u);
+		model.addAttribute("lists",userLists);
 		}
 		return "lists";
 	}
